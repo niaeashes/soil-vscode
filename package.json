@@ -1,0 +1,34 @@
+{
+  "name": "soil",
+  "displayName": "soil Schema",
+  "version": "0.0.1",
+  "type": "module",
+  "repository": "git@github.com:niaeashes/soil.git",
+  "author": "niaeashes <nia.eashes@gmail.com>",
+  "license": "MIT",
+  "main": "./extension.js",
+  "dependencies": {
+    "chalk": "^5.0.1"
+  },
+  "devDependencies": {
+    "ava": "^4.3.1"
+  },
+  "scripts": {
+    "test": "ava"
+  },
+  "engines": {
+    "vscode": "^1.69.0"
+  },
+  "contributes": {
+    "languages": [{
+        "id": "soil",
+        "extensions": [".soil"],
+        "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+        "language": "soil",
+        "scopeName": "source.soil",
+        "path": "./syntaxes/soil.tmLanguage.json"
+    }]
+  }
+}
