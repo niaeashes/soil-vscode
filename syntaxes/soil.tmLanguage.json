@@ -7,6 +7,9 @@
     },
     {
       "include": "#declaration"
+    },
+    {
+      "include": "#keywords"
     }
   ],
   "repository": {
@@ -83,6 +86,9 @@
               "include": "#endpoint-declaration"
             },
             {
+              "include": "#keywords"
+            },
+            {
               "include": "#comments"
             }
           ]
@@ -90,18 +96,15 @@
       ]
     },
     "field-declaration": {
-      "begin": "\\b(?:(mutable)\\s+)?(field)\\s+([\\p{L}][\\p{L}\\p{N}_]*)(:)",
+      "begin": "\\b(field)\\s+([\\p{L}][\\p{L}\\p{N}_]*)(:)",
       "beginCaptures": {
         "1": {
-          "name": "storage.modifier.mutable.soil"
-        },
-        "2": {
           "name": "storage.type.declaration.$2.soil"
         },
-        "3": {
+        "2": {
           "name": "entity.name.type.field.soil"
         },
-        "4": {
+        "3": {
           "name": "punctuation.separator.field-definition.soil"
         }
       },
@@ -169,6 +172,9 @@
           "patterns": [
             {
               "include": "#field-declaration"
+            },
+            {
+              "include": "#keywords"
             },
             {
               "include": "#comments"
@@ -239,6 +245,9 @@
       "end": "(?<=\\})",
       "patterns": [
         {
+          "include": "#keywords"
+        },
+        {
           "include": "#field-declaration"
         }
       ]
@@ -295,6 +304,18 @@
             },
             "2": {
               "name": "support.modifier.optional.soil"
+            }
+          }
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "match": "\\b(mutable|identifier|reference|writer)\\b",
+          "captures": {
+            "1": {
+              "name": "storage.modifier.field.$1.soil"
             }
           }
         }
