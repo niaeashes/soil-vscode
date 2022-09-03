@@ -11,6 +11,8 @@ let client
 
 const activate = async function (context) {
 
+  console.log('activate:', context)
+
   const serverModule = context.asAbsolutePath(path.join('node_modules', 'soil-schema', 'src', 'lsp.js'))
   const serverOptions = {
     run: { module: serverModule, transport: TransportKind.stdio },
@@ -20,6 +22,8 @@ const activate = async function (context) {
     documentSelector: [SOIL_MODE],
     stdioEncoding: 'utf8',
   }
+
+  console.log('serverModule:', serverModule)
 
   client = new LanguageClient(
     'soilLSP',
@@ -37,7 +41,7 @@ const activate = async function (context) {
 }
 
 const deactivate = function () {
-  console.log('deactivate', client)
+  console.log('deactivate:', client)
   if (client) client.stop()
 }
 
