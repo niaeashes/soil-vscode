@@ -1,13 +1,13 @@
 {
   "name": "soil-schema-vscode",
-  "displayName": "soil Schema Extension",
-  "version": "0.2.1",
+  "displayName": "Soil Schema",
+  "version": "0.2.0",
   "repository": {
     "url": "https://github.com/niaeashes/soil-vscode",
     "type": "git"
   },
   "author": "niaeashes <nia.eashes@gmail.com>",
-  "publisher": "niaeashes",
+  "publisher": "soil-schema",
   "license": "MIT",
   "main": "./extension.js",
   "dependencies": {
