@@ -1,7 +1,7 @@
 {
   "name": "soil-schema-vscode",
   "displayName": "Soil Schema",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "repository": {
     "url": "https://github.com/niaeashes/soil-vscode",
     "type": "git"
@@ -20,7 +20,7 @@
   },
   "scripts": {
     "vscode:prepublish": "npm run esbuild-base -- --minify",
-    "esbuild-base": "esbuild ./src/extension.js --bundle --outfile=extension.js --external:vscode --format=esm --platform=node",
+    "esbuild-base": "esbuild ./src/extension.js --bundle --outfile=extension.js --external:vscode --format=cjs --platform=node",
     "test": "ava"
   },
   "engines": {
