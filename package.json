@@ -15,9 +15,12 @@
     "vscode-languageclient": "^8.0.0"
   },
   "devDependencies": {
-    "ava": "^4.3.1"
+    "ava": "^4.3.1",
+    "esbuild": "^0.15.6"
   },
   "scripts": {
+    "vscode:prepublish": "npm run esbuild-base -- --minify",
+    "esbuild-base": "esbuild ./src/extension.js --bundle --outfile=extension.js --external:vscode --format=esm --platform=node",
     "test": "ava"
   },
   "engines": {
